@@ -8,7 +8,7 @@ export default async function PageClient({
     params: Promise<{ id: number }>;
 }) {
     const { id } = await params;
-    const res = await fetch(`http://dako:3000/clients/${id}`);
+    const res = await fetch(`http://localhost:3000/clients/${id}`);
     const client = await res.json();
 
     return (

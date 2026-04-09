@@ -21,7 +21,7 @@ export default function AjouterClient() {
             tel: formData.get('tel')
         }
         try {
-            await fetch("http://dako:3000/clients", {
+            await fetch("http://localhost:3000/clients", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data),

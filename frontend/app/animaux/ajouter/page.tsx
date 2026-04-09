@@ -21,7 +21,7 @@ export default function AjouterAnimal() {
             poids: formData.get('poids')
         }
         try {
-            await fetch("http://dako:3000/animaux", {
+            await fetch("http://localhost:3000/animaux", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data),

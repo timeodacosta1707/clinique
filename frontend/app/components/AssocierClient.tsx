@@ -14,7 +14,7 @@ export default function AssocierClient({ animal }: { animal: any }) {
     useEffect(() => {
         const fetchClients = async () => {
             try {
-                const res = await fetch('http://dako:3000/clients');
+                const res = await fetch('http://localhost:3000/clients');
                 const data = await res.json();
                 setClients(data);
             } catch (error) {
@@ -28,7 +28,7 @@ export default function AssocierClient({ animal }: { animal: any }) {
         if (!selectedClientId) return;
         setIsSubmitting(true);
         try {
-            const res = await fetch(`http://dako:3000/animaux/${animal.id}`, {
+            const res = await fetch(`http://localhost:3000/animaux/${animal.id}`, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ client: parseInt(selectedClientId) }),

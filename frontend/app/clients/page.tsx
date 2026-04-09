@@ -1,7 +1,7 @@
 import ListeRecherche from "@/app/components/ListeRecherche";
 
 export default async function PageClients() {
-    const res = await fetch('http://dako:3000/clients');
+    const res = await fetch('http://localhost:3000/clients');
     const clients = await res.json();
 
     if (clients.length === 0) {

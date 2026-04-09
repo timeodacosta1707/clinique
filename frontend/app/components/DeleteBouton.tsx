@@ -12,7 +12,7 @@ export default function DeleteButton({ id, name, type }: { id: number; name: str
     const handleDelete = async () => {
         setIsLoading(true)
         try {
-            const res = await fetch(`http://dako:3000/${type}/${id}`, {
+            const res = await fetch(`http://localhost:3000/${type}/${id}`, {
                 method: "DELETE",
             });
             if (res.ok) {

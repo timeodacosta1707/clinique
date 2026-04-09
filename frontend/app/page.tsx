@@ -3,9 +3,9 @@ import FAQ from "./components/FAQ";
 import StatsCard from "./components/StatsCard";
 
 export default async function Home() {
-	const resAnimaux = await fetch("http://dako:3000/animaux");
+	const resAnimaux = await fetch("http://localhost:3000/animaux");
 	const dataAnimaux = await resAnimaux.json();
-	const resClients = await fetch("http://dako:3000/clients");
+	const resClients = await fetch("http://localhost:3000/clients");
 	const dataClients = await resClients.json();
 	const nbAnimaux = dataAnimaux.length;
 	const nbClients = dataClients.length;

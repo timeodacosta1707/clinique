@@ -11,7 +11,7 @@ export default async function PageAnimal({
     params: Promise<{ id: number }>;
 }) {
     const { id } = await params;
-    const res = await fetch(`http://dako:3000/animaux/${id}`);
+    const res = await fetch(`http://localhost:3000/animaux/${id}`);
     const animal = await res.json();
 
     return (
@@ -34,48 +34,33 @@ export default async function PageAnimal({
             </div>
 
             <div className="bg-white border border-gray-200 rounded-2xl divide-y divide-gray-100">
-                <div className="flex justify-between items-center px-5 py-4">
-                    <div className='flex gap-3'>
-                        <CalendarDays className="w-4 h-4 text-blue-400 shrink-0" />
-                        <span className="text-sm text-gray-500 w-24 shrink-0">Âge</span>
-                        <span className="text-sm font-medium text-gray-800">{animal.age} an{animal.age > 1 ? "s" : ""}</span>
-                    </div>
-                    <Edit className='w-4 h-4 text-blue-400 shrink-0 hover:scale-105 cursor-pointer' />
+                <div className="flex items-center gap-3 px-5 py-4">
+                    <CalendarDays className="w-4 h-4 text-blue-400 shrink-0" />
+                    <span className="text-sm text-gray-500 w-24 shrink-0">Âge</span>
+                    <span className="text-sm font-medium text-gray-800">{animal.age} an{animal.age > 1 ? "s" : ""}</span>
                 </div>
-                <div className="flex justify-between items-center gap-3 px-5 py-4">
-                    <div className='flex gap-3'>
-                        <Ruler className="w-4 h-4 text-blue-400 shrink-0" />
-                        <span className="text-sm text-gray-500 w-24 shrink-0">Taille</span>
-                        <span className="text-sm font-medium text-gray-800">{animal.taille} cm</span>
-                    </div>
-                    <Edit className='w-4 h-4 text-blue-400 shrink-0 hover:scale-105 cursor-pointer' />
+                <div className="flex items-center gap-3 px-5 py-4">
+                    <Ruler className="w-4 h-4 text-blue-400 shrink-0" />
+                    <span className="text-sm text-gray-500 w-24 shrink-0">Taille</span>
+                    <span className="text-sm font-medium text-gray-800">{animal.taille} cm</span>
                 </div>
-                <div className="flex justify-between items-center gap-3 px-5 py-4">
-                    <div className='flex gap-3'>
-                        <Weight className="w-4 h-4 text-blue-400 shrink-0" />
-                        <span className="text-sm text-gray-500 w-24 shrink-0">Poids</span>
-                        <span className="text-sm font-medium text-gray-800">{animal.poids} kg</span>
-                    </div>
-                    <Edit className='w-4 h-4 text-blue-400 shrink-0 hover:scale-105 cursor-pointer' />
+                <div className="flex items-center gap-3 px-5 py-4">
+                    <Weight className="w-4 h-4 text-blue-400 shrink-0" />
+                    <span className="text-sm text-gray-500 w-24 shrink-0">Poids</span>
+                    <span className="text-sm font-medium text-gray-800">{animal.poids} kg</span>
                 </div>
-                <div className="flex justify-between items-center gap-3 px-5 py-4">
-                    <div className='flex gap-3'>
-                        <PawPrint className="w-4 h-4 text-blue-400 shrink-0" />
-                        <span className="text-sm text-gray-500 w-24 shrink-0">Espèce</span>
-                        <span className="text-sm font-medium text-gray-800">{animal.espece}</span>
-                    </div>
-                    <Edit className='w-4 h-4 text-blue-400 shrink-0 hover:scale-105 cursor-pointer' />
+                <div className="flex items-center gap-3 px-5 py-4">
+                    <PawPrint className="w-4 h-4 text-blue-400 shrink-0" />
+                    <span className="text-sm text-gray-500 w-24 shrink-0">Espèce</span>
+                    <span className="text-sm font-medium text-gray-800">{animal.espece}</span>
                 </div>
                 {animal.client && (
-                    <div className="flex justify-between items-center gap-3 px-5 py-4">
-                        <div className='flex gap-3'>
-                            <User className="w-4 h-4 text-blue-400 shrink-0" />
-                            <span className="text-sm text-gray-500 w-24 shrink-0">Propriétaire</span>
-                            <Link href={`/clients/${animal.client.id}`} className="text-sm font-medium text-blue-500 hover:underline">
-                                {animal.client.civilite}. {animal.client.nom}
-                            </Link>
-                        </div>
-                        <Edit className='w-4 h-4 text-blue-400 shrink-0 hover:scale-105 cursor-pointer' />
+                    <div className="flex items-center gap-3 px-5 py-4">
+                        <User className="w-4 h-4 text-blue-400 shrink-0" />
+                        <span className="text-sm text-gray-500 w-24 shrink-0">Propriétaire</span>
+                        <Link href={`/clients/${animal.client.id}`} className="text-sm font-medium text-blue-500 hover:underline">
+                            {animal.client.civilite}. {animal.client.nom}
+                        </Link>
                     </div>
                 )}
             </div>

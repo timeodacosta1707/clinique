@@ -1,7 +1,7 @@
 import ListeRecherche from "../components/ListeRecherche";
 
 export default async function PageAnimaux() {
-    const res = await fetch('http://dako:3000/animaux');
+    const res = await fetch('http://localhost:3000/animaux');
     const animaux = await res.json();
 
     if (animaux.length === 0) {
