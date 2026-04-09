@@ -1,5 +1,3 @@
-// Pas de 'use client' ici !
-
 import AssocierClient from '@/app/components/AssocierClient';
 import DeleteButton from '@/app/components/DeleteBouton';
 import { ArrowLeft, Weight, Ruler, CalendarDays, PawPrint, User, Edit } from 'lucide-react'
