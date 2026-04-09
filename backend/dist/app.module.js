@@ -24,8 +24,7 @@ exports.AppModule = AppModule = __decorate([
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'sqlite',
                 database: 'veterinaire.sqlite',
-                entities: [client_entity_1.Client, animaux_entity_1.Animaux],
-                synchronize: false,
+                entities: [client_entity_1.Client, animaux_entity_1.Animaux]
             }),
             clients_module_1.ClientsModule,
             animaux_module_1.AnimauxModule

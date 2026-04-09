@@ -12,8 +12,7 @@ import { Animaux } from './animaux/entities/animaux.entity';
     TypeOrmModule.forRoot({
       type: 'sqlite',
       database: 'veterinaire.sqlite',
-      entities: [Client, Animaux],
-      synchronize: false,
+      entities: [Client, Animaux]
     }),
     ClientsModule,
     AnimauxModule
