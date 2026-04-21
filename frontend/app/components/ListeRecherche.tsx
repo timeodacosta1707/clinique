@@ -7,9 +7,9 @@ import Link from "next/link"
 type Item = {
     id: number
     prenom: string
-    nom?: string
-    civilite?: string
-    espece?: string
+    nom?: string | undefined
+    civilite?: string | undefined
+    espece?: string | undefined
 }
 
 export default function ListeRecherche({ items, type }: { items: Item[], type: "clients" | "animaux" }) {

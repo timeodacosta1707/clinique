@@ -21,13 +21,12 @@ export default function AjouterClient() {
             tel: formData.get('tel')
         }
         try {
-            await fetch("http://localhost:3000/clients", {
+            await fetch(`${process.env.NEXT_PUBLIC_API_URL}/clients`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data),
             })
             router.push("/clients")
-            router.refresh()
         } finally {
             setIsSubmitting(false)
         }
